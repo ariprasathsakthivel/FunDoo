@@ -1,0 +1,68 @@
+<div fxLayout="row" fxLayoutAlign="center center" >
+  <mat-card id="card" fxFlex.xs="100%" class="within_box" fxLayout="row" fxLayoutAlign="space-evenly center" fxLayoutGap="50px" >
+    <div fxLayout="column" fxLayoutAlign="center start" >
+      <div class="Title" style="font-size:xx-large;">
+        <span style="color: #3b6fca;">F</span>
+        <span style="color: #3ec763;">u</span>
+        <span style="color: #dfa700;">n</span>
+        <span style="color: #f84130;">d</span>
+        <span style="color: #376bc5;">o</span>
+        <span style="color: #ffc413;">o</span>
+      </div>
+      <br>
+      <h1 >Create your Google Account</h1>
+
+      <form fxLayout="column" fxLayoutAlign="center start" class="form">
+        <div fxLayout="row"  fxLayout.xs="column" fxLayoutGap="10px" class="form">
+          <mat-form-field appearance="outline" class="box_full_width">
+            <mat-label>First name</mat-label>
+            <input matInput [formControl]="firstname" required>
+            <mat-error >Enter first name</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="box_full_width">
+            <mat-label>Last name</mat-label>
+            <input matInput [formControl]="lastname" required>
+            <mat-error >Enter last name</mat-error>
+          </mat-form-field>
+        </div>
+
+        <mat-form-field appearance="outline" class="box_full_width">
+          <mat-label>Username</mat-label>
+          <input matInput [formControl]="username" required>
+          <mat-error >Choose a Gamil address</mat-error>
+          <mat-hint>You can use letters, number & periods</mat-hint>
+        </mat-form-field>
+        <br>
+
+        <div fxLayout="row"  fxLayout.xs="column" fxLayoutGap="10px" class="form">
+          <mat-form-field appearance="outline" class="box_full_width">
+            <mat-label>Password</mat-label>
+            <input matInput [formControl]="password" required>
+            <mat-error >Enter a password</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="box_full_width">
+            <mat-label>Confirm</mat-label>
+            <input matInput [formControl]="confirm" required>
+            <mat-error >Confirm the password</mat-error>
+          </mat-form-field>
+        </div>
+
+      </form>
+
+      <p>Use 8 or more characters with a mix of letters, numbers & symbols</p>
+      <mat-checkbox class="example-margin">Show password</mat-checkbox>
+      <br>
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="200px" fxLayoutGap.xs="10px" >
+        <button mat-button color="primary">Sign in instead</button>
+        <button mat-raised-button color="primary">Next</button>
+      </div>
+    </div>
+
+    <div fxLayout="column" fxLayoutAlign="start center" fxHide.lt-md >
+      <img class="one_account" src="https://ssl.gstatic.com/accounts/signup/glif/account.svg">
+      <span style="text-align: center; font-size: medium; color: rgba(19, 18, 18, 0.781);"> <tr>One account. All of Google working for you.</tr></span>
+    </div>
+  </mat-card>
+</div>
