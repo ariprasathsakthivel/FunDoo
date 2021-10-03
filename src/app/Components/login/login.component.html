@@ -12,33 +12,31 @@
         <br>
         <h1>Sign in</h1>
         <h4>Use your Google Account</h4>
-
-        <div class="form">
+        <form [formGroup]="formdata" (ngSubmit)="onFormSubmit()" class="form">
             <mat-form-field class="email" appearance="outline" class="box_full_width">
                 <mat-label>Email or Phone</mat-label>
                 <mat-error>Enter Email or Phone</mat-error>
-                <input matInput [formControl]="username" required>
+                <input matInput formControlName="username" required>
             </mat-form-field>
-        </div>
         
-        <div style="margin-bottom: -20px;" class="form">
-            <mat-form-field class="password" appearance="outline" class="box_full_width">
-                <mat-label>Password</mat-label>
-                <mat-error>Enter password</mat-error>
-                <input matInput [formControl]="password" required>
-            </mat-form-field>
+            <div style="margin-bottom: -20px;" class="form">
+                <mat-form-field class="password" appearance="outline" class="box_full_width">
+                    <mat-label>Password</mat-label>
+                    <mat-error>Enter password</mat-error>
+                    <input [type]="hidden?'password':'text'" matInput formControlName="password" required>
+                </mat-form-field>
+                <br>
+                <span style="margin-left: -15px;"><button type="button" mat-button color="primary" routerLink="/forgot-password">Forgot password?</button></span>
+                <mat-checkbox (click)="showPassword()" class="example-margin">Show password</mat-checkbox>
+            </div>
             <br>
-            <span style="margin-left: -15px;"><button mat-button color="primary">Forgot password?</button></span>
-        </div>
-        <br>
 
-        <div>
-            <p>Not your computer? Use Guest mode to sign in<span style="margin: -12px;"><button mat-button disableRipple="true" color ="primary">Learn more</button></span></p>
-        </div>
-        <div fxLayout.xs="column" fxLayoutAlign.xs="center center" fxLayoutGap="180px" fxLayoutGap.xs="10px">
-            <button mat-button color="primary">Create account</button>
-            <button mat-raised-button color="primary">Submit</button>
-        </div>
+            <p>Not your computer? Use Guest mode to sign in<span style="margin: -12px;"><button type="button" mat-button disableRipple="true" color ="primary">Learn more</button></span></p>
+            <div fxLayout.xs="column" fxLayoutAlign.xs="center center" fxLayoutGap="180px" fxLayoutGap.xs="10px">
+                <button mat-button type="button" color="primary" routerLink="/signup">Create account</button>
+                <button mat-raised-button type="submit" color="primary">Submit</button>
+            </div>
+        </form>
     </mat-card>
 </div>
 

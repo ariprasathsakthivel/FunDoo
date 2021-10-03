@@ -16,6 +16,13 @@ import {MatButtonModule} from '@angular/material/button';
 import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
 import {MatCardModule} from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+
+
+
 
 
 @NgModule({
@@ -24,7 +31,8 @@ import {MatCardModule} from '@angular/material/card';
     LoginComponent,
     RegisterComponent,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +44,10 @@ import {MatCardModule} from '@angular/material/card';
     FlexLayoutModule,
     MatButtonModule,
     MatCardModule,
-    ReactiveFormsModule
+    MatToolbarModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
