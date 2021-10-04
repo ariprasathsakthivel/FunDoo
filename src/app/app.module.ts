@@ -20,6 +20,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatListModule} from '@angular/material/list';
 
 
 
@@ -46,6 +50,10 @@ import {MatIconModule} from '@angular/material/icon';
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
+    MatSnackBarModule,
+    MatSidenavModule,
+    MatGridListModule,
+    MatListModule,
     ReactiveFormsModule,
     HttpClientModule
   ],

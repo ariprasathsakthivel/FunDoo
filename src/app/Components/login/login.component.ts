@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormControl, Validators} from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserServiceService } from 'src/app/services/userService/user-service.service';
 
 
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   hidden:boolean=true;
 
   
-  constructor(private userService:UserServiceService) {}
+  constructor(private userService:UserServiceService,private snackbar:MatSnackBar) {}
 
   ngOnInit(): void {
     this.formdata=new FormGroup({
@@ -32,8 +33,17 @@ export class LoginComponent implements OnInit {
         password:this.formdata.value.password
       };
       this.userService.loginServie(payload).subscribe(
-        (response:any)=> {console.log(response);
-        localStorage.setItem("token",response.id)})
+        (response:any)=> {console.log(response),
+          this.snackbar.open("Login successfull","close", {
+            duration: 1000,
+          });
+        },
+        (error)=>{console.log(error)
+          this.snackbar.open(error.statusText ,"close", {
+            duration: 1000,
+          });
+        },
+      )
     }
   }
 

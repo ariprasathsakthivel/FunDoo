@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormControl, Validators} from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserServiceService } from 'src/app/services/userService/user-service.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class ForgotPasswordComponent implements OnInit {
   formdata:any;
 
   
-  constructor(private userService:UserServiceService) {}
+  constructor(private userService:UserServiceService,private snackbar:MatSnackBar) {}
 
   ngOnInit(): void {
     this.formdata=new FormGroup({
@@ -29,7 +30,16 @@ export class ForgotPasswordComponent implements OnInit {
       "email":this.formdata.value.username
     };
     this.userService.forgotPasswordService(payload).subscribe(
-      (res)=>console.log(res)
+      (response)=>{console.log(response) 
+        this.snackbar.open("A link to reset the password has been send to your email","close", {
+          duration: 1000,
+        });
+      },
+      (error)=>{console.log(error),
+        this.snackbar.open("You're not registered","close", {
+          duration: 1000,
+        });
+      }
     )
   }
 }

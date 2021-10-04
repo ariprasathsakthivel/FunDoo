@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormControl, Validators} from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
 import { UserServiceService } from 'src/app/services/userService/user-service.service';
 
 @Component({
@@ -10,15 +12,19 @@ import { UserServiceService } from 'src/app/services/userService/user-service.se
 export class ResetPasswordComponent implements OnInit {
   formdata:any;
   hidden:boolean=true;
-  
-  constructor(private userService:UserServiceService) { }
+  token:any;
+  constructor( private activeRoute:ActivatedRoute,private userService:UserServiceService, private snackbar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.formdata=new FormGroup({
       password : new FormControl('', Validators.required),
       confirm : new FormControl('', Validators.required)
     });
+    this.token = this.activeRoute.snapshot.paramMap.get('token');
+    localStorage.setItem("token",this.token);
   }
+
+
 
 
   onFormSubmit()  {
@@ -27,9 +33,18 @@ export class ResetPasswordComponent implements OnInit {
         newPassword:this.formdata.value.password
       }
       this.userService.resetPasswordService(payload).subscribe(
-        (response)=>console.log(response)
+        (response)=>{console.log(response) 
+          this.snackbar.open("Password changed successfully","close", {
+            duration: 1000,
+          });
+        },
+        (error)=>{console.log(error),
+          this.snackbar.open("Unable to change password","close", {
+            duration: 1000,
+          });
+        }
       )
-  }
+    }
   }
 
   showPassword(){

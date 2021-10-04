@@ -18,28 +18,31 @@ export class UserServiceService {
   {
     let header={
       headers: new HttpHeaders ({
-        "Content-Type":"application/json"
+        "Content-Type":"application/json",
+        Authorization:this.token
       })
     }
-    return this.httpService.postService(this.baseURL+"/user/userSignUp",payload,header)
+    return this.httpService.postService(this.baseURL+"/user/userSignUp",payload,false,header)
   }
   loginServie(payload:any)
   {
     let header={
       headers: new HttpHeaders ({
-        "Content-Type":"application/json"
+        "Content-Type":"application/json",
+        Authorization:this.token
       })
     }
-    return this.httpService.postService(this.baseURL+"/user/login",payload,header)
+    return this.httpService.postService(this.baseURL+"/user/login",payload,false,header)
   }
   forgotPasswordService(payload:any)
   {
     let header={
       headers: new HttpHeaders ({
-        "Content-Type":"application/json"
+        "Content-Type":"application/json",
+        Authorization:this.token
       })
     }
-    return this.httpService.postService(this.baseURL+"/user/reset",payload,header)
+    return this.httpService.postService(this.baseURL+"/user/reset",payload,false,header)
   }
   resetPasswordService(payload:any)
   {
@@ -49,6 +52,6 @@ export class UserServiceService {
         'Authorization': this.token
       })
     }
-    return this.httpService.postService(this.baseURL+"/user/reset-password",payload,header)
+    return this.httpService.postService(this.baseURL+"/user/reset-password",payload,true,header)
   }
 }
