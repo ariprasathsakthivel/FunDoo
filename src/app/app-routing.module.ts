@@ -13,9 +13,13 @@ const routes: Routes = [{ path: 'signup',component: RegisterComponent },
 { path: 'login',component: LoginComponent},
 { path: 'forgot-password',component:ForgotPasswordComponent },
 { path: 'resetpassword/:token',component:ResetPasswordComponent },
-{ path: 'dashboard',component:DashboardComponent},
-{ path: 'create-notes', component:CreateNoteComponent },
-{ path: 'icons', component:IconsComponent },
+{ path: 'dashboard',component:DashboardComponent,
+children: [
+  { path: 'create-notes', component:CreateNoteComponent,
+  children: [
+    { path: '', component:IconsComponent }
+  ]}
+]},
 { path: 'notes', component:DisplayNotesComponent }
 ];
 

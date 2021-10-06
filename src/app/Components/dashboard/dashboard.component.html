@@ -6,7 +6,7 @@
             </button>
             <img src="../assets/keep_logo.png" class="keeplogo" >
             <h1>Fundoo</h1>
-            <form class="search" fxHide.lt-md="true">
+            <form class="matform" fxHide.lt-md="true" >
                 <mat-form-field appearance="outline" >
                     <mat-icon matPrefix>search</mat-icon>
                     <input matInput placeholder="Search">
@@ -56,6 +56,7 @@
         </mat-sidenav>
 
         <mat-sidenav-content>
+            <router-outlet></router-outlet>
         </mat-sidenav-content>
     </mat-sidenav-container>
 </div>

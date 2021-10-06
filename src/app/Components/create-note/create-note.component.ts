@@ -19,7 +19,7 @@ expanded:boolean=false;
   }
 
   close(){
-    if (!this.expanded){
+    if (this.expanded){
       this.expanded=!this.expanded;
     }
   }

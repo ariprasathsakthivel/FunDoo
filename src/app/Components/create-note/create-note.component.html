@@ -1,4 +1,4 @@
-<div fxFlex="100" fxLayout="row" fxLayoutAlign="center center" (click)="close()">
+<div fxFlex="100" fxLayout="row" fxLayoutAlign="center center">
     <mat-card class="card" fxFlex="50" fxLayout="column">
         <mat-form-field appearance="outline" class="form" *ngIf="expanded">
             <input matInput placeholder="Title">
@@ -15,5 +15,9 @@
                 <mat-icon>image</mat-icon>
             </button>
         </mat-form-field>
+        <div *ngIf="expanded" fxLayout="row">
+            <router-outlet></router-outlet>
+            <button mat-button style="margin-left: auto;" (click)="close()">Close</button>
+        </div>
     </mat-card>
 </div>

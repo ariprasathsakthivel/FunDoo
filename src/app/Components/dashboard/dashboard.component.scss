@@ -27,7 +27,7 @@
   padding-right: 10px;
 }
 
-.search{
+.matform{
   padding: 0px 10px;
   margin-left: auto;
   margin-right: auto;
@@ -38,7 +38,8 @@
 .refresh,.settings,.agenda{
   padding: 8px;
 }
-::ng-deep {
+
+.matform {
   .mat-form-field-appearance-outline .mat-form-field-wrapper{
     padding:0px;
     margin: 0px;
@@ -47,7 +48,30 @@
     font-size: 15px;
     border-radius: 5px;
   }
+  .mat-form-field-appearance-outline .mat-form-field-outline-start, .mat-form-field-appearance-outline .mat-form-field-outline-end {
+    border: 0px;
+    min-width: 0px;
+  }
+  .mat-form-field-wrapper {
+    padding-bottom: 0px;
+  }
 }
+
+// :host{
+//   ::ng-deep {
+//       .mat-form-field-appearance-outline .mat-form-field-wrapper {
+//           margin: 0px;
+//       }
+//       .mat-form-field-appearance-outline .mat-form-field-outline-start, .mat-form-field-appearance-outline .mat-form-field-outline-end {
+//           border: 0px;
+//           min-width: 0px;
+//       }
+//       .mat-form-field-wrapper {
+//           padding-bottom: 0px;
+//       }
+//     }
+//   }
+
 
 .example-sidenav-container {
   flex: 1;
