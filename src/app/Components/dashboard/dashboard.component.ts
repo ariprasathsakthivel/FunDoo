@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  isExpanded = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
 
 }

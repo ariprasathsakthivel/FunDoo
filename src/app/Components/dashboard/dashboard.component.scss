@@ -1,48 +1,67 @@
-// .toolbar{
-//     position:fixed;
-//     background-color: white;
-//     border-bottom: 1px solid rgba(0, 0, 0, 0.137);
-// }
+.container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 
-// .searchbar{
-//     width: 40vw;
-//     font-size: 15px;
-//     margin-top: 19px;
-// }
+.toolbar{
+  background-color: white;
 
-// .profilePic{
-//     border-radius: 100%;
-    
-// }
+}
+.example-is-mobile .toolbar {
+  position: fixed;
+  z-index: 2;
+}
 
-.example-container {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+
+.menu{
+  padding: 0px 12px;
+  margin: 0px 4px;
+}
+
+.keeplogo{
+  padding-right: 10px;
+}
+
+.search{
+  padding: 0px 10px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+.refresh,.settings,.agenda{
+  padding: 8px;
+}
+::ng-deep {
+  .mat-form-field-appearance-outline .mat-form-field-wrapper{
+    padding:0px;
+    margin: 0px;
+    background-color: #F1F3F4;
+    width: 500px;
+    font-size: 15px;
+    border-radius: 5px;
   }
-  
-  .example-is-mobile .example-toolbar {
-    position: fixed;
-    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
-    // z-index: 2;
-  }
-  
-  h1.example-app-name {
-    margin-left: 8px;
-  }
-  
-  .example-sidenav-container {
-    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
-       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
-    flex: 1;
-  }
-  
-  .example-is-mobile .example-sidenav-container {
-    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
-       `<body>` to be our scrolling element for mobile layouts. */
-    flex: 1 0 auto;
-  }
+}
+
+.example-sidenav-container {
+  flex: 1;
+}
+
+.sidenav{
+  width: 130px;
+}
+
+.sidenavlist{
+  margin: 5px 5px;
+}
+.example-is-mobile .example-sidenav-container {
+  flex: 1 0 auto;
+}
+
+ 

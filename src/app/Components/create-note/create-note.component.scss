@@ -1,0 +1,25 @@
+
+
+.card{
+    height:auto;
+    padding: 5px;
+    margin-top: 100px;
+
+}
+.form{
+    margin-left: 10px;
+}
+:host {
+    ::ng-deep {
+        .mat-form-field-appearance-outline .mat-form-field-wrapper {
+            margin: 0px;
+        }
+        .mat-form-field-appearance-outline .mat-form-field-outline-start, .mat-form-field-appearance-outline .mat-form-field-outline-end {
+            border: 0px;
+            min-width: 0px;
+        }
+        .mat-form-field-wrapper {
+            padding-bottom: 0px;
+        }
+    }
+}

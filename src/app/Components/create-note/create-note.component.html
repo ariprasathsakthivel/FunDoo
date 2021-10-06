@@ -1,0 +1,19 @@
+<div fxFlex="100" fxLayout="row" fxLayoutAlign="center center" (click)="close()">
+    <mat-card class="card" fxFlex="50" fxLayout="column">
+        <mat-form-field appearance="outline" class="form" *ngIf="expanded">
+            <input matInput placeholder="Title">
+        </mat-form-field>
+        <mat-form-field fxFlex="100" appearance="outline" class="form" (click)="expand()">
+            <input matInput placeholder="Take a note...">
+            <button mat-icon-button matSuffix>
+                <mat-icon>check_box</mat-icon>
+            </button>
+            <button mat-icon-button matSuffix>
+                <mat-icon>brush</mat-icon>
+            </button>
+            <button mat-icon-button matSuffix>
+                <mat-icon>image</mat-icon>
+            </button>
+        </mat-form-field>
+    </mat-card>
+</div>

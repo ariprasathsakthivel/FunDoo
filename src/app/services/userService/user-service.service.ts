@@ -19,7 +19,6 @@ export class UserServiceService {
     let header={
       headers: new HttpHeaders ({
         "Content-Type":"application/json",
-        Authorization:this.token
       })
     }
     return this.httpService.postService(this.baseURL+"/user/userSignUp",payload,false,header)
@@ -29,7 +28,6 @@ export class UserServiceService {
     let header={
       headers: new HttpHeaders ({
         "Content-Type":"application/json",
-        Authorization:this.token
       })
     }
     return this.httpService.postService(this.baseURL+"/user/login",payload,false,header)
@@ -38,8 +36,7 @@ export class UserServiceService {
   {
     let header={
       headers: new HttpHeaders ({
-        "Content-Type":"application/json",
-        Authorization:this.token
+        "Content-Type":"application/json"
       })
     }
     return this.httpService.postService(this.baseURL+"/user/reset",payload,false,header)

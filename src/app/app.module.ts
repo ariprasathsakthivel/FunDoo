@@ -24,6 +24,10 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatListModule} from '@angular/material/list';
+import { CreateNoteComponent } from './Components/create-note/create-note.component';
+import { IconsComponent } from './Components/icons/icons.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { DisplayNotesComponent } from './Components/display-notes/display-notes.component';
 
 
 
@@ -36,7 +40,10 @@ import {MatListModule} from '@angular/material/list';
     RegisterComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    DashboardComponent
+    DashboardComponent,
+    CreateNoteComponent,
+    IconsComponent,
+    DisplayNotesComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +61,7 @@ import {MatListModule} from '@angular/material/list';
     MatSidenavModule,
     MatGridListModule,
     MatListModule,
+    MatMenuModule,
     ReactiveFormsModule,
     HttpClientModule
   ],
