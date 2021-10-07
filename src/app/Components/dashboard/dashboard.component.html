@@ -1,36 +1,45 @@
-<div class="container">
-    <mat-toolbar class="toolbar" >
-        <div fxFlex fxLayout="row" fxLayoutAlign="start center" class="toolbar1">
-            <button mat-icon-button (click)="snav.toggle()" class="menu">
-                <mat-icon>menu</mat-icon>
-            </button>
-            <img src="../assets/keep_logo.png" class="keeplogo" >
-            <h1>Fundoo</h1>
-            <form class="matform" fxHide.lt-md="true" >
-                <mat-form-field appearance="outline" >
-                    <mat-icon matPrefix>search</mat-icon>
-                    <input matInput placeholder="Search">
-                    <button mat-icon-button matSuffix>
-                        <mat-icon>close</mat-icon>
-                    </button>
-                </mat-form-field>
-            </form > 
-        </div>
+<div class="main" >
+    <mat-toolbar class="toolbar">
+        <button mat-icon-button (click)="snav.toggle()" class="menu">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <img src="../assets/keep_logo.png" class="keeplogo" >
+        <h1>Fundoo</h1>
+        <form class="matform" fxHide.lt-md="true" >
+            <mat-form-field appearance="outline" >
+                <mat-icon matPrefix>search</mat-icon>
+                <input matInput placeholder="Search">
+                <button mat-icon-button matSuffix>
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </form >
 
-        <div fxLayout="row" fxLayoutAlign="end center" style="margin-left: auto;">
+        <div>
             <button mat-icon-button fxShow fxHide.gt-sm="true">
                 <mat-icon >search</mat-icon>
             </button>
-            <mat-icon class="refresh" >refresh</mat-icon>
-            <mat-icon class="agenda" >view_agenda</mat-icon>
-            <mat-icon class="settings" >settings</mat-icon>
-            <mat-icon>apps</mat-icon>
-            <mat-icon class="settings" >account_circle</mat-icon>
+            <button mat-icon-button>
+                <mat-icon class="refresh" >refresh</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon class="agenda" >view_agenda</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon class="settings" >settings</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon>apps</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon class="settings" >account_circle</mat-icon>
+            </button>
         </div>
     </mat-toolbar>
 
-    <mat-sidenav-container class="example-sidenav-container">
-        <mat-sidenav class="sidenav" #snav mode="side" fixedTopGap="56">
+
+    <mat-sidenav-container  class="sidenav-container">
+        <mat-sidenav class="sidenav" #snav mode="side" fixedTopGap="120px">
             <mat-nav-list class="sidenavlist" fxLayout="column" >
                     <button mat-icon-button>
                         <mat-icon style="padding-right: 10px;" >lightbulb</mat-icon>
@@ -55,7 +64,7 @@
             </mat-nav-list>
         </mat-sidenav>
 
-        <mat-sidenav-content>
+        <mat-sidenav-content class="abc">
             <router-outlet></router-outlet>
         </mat-sidenav-content>
     </mat-sidenav-container>

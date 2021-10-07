@@ -8,19 +8,22 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { CreateNoteComponent } from './Components/create-note/create-note.component';
 import { IconsComponent } from './Components/icons/icons.component';
 import { DisplayNotesComponent } from './Components/display-notes/display-notes.component';
+import { GetAllNotesComponent } from './Components/get-all-notes/get-all-notes.component';
+import { AuthGuardGuard } from './AuthGuard/auth-guard.guard';
 
-const routes: Routes = [{ path: 'signup',component: RegisterComponent },
+
+const routes: Routes = [
+{ path: 'signup',component: RegisterComponent },
 { path: 'login',component: LoginComponent},
 { path: 'forgot-password',component:ForgotPasswordComponent },
 { path: 'resetpassword/:token',component:ResetPasswordComponent },
-{ path: 'dashboard',component:DashboardComponent,
-children: [
-  { path: 'create-notes', component:CreateNoteComponent,
+{ path: 'dashboard',component:DashboardComponent,canActivate:[AuthGuardGuard],
   children: [
-    { path: '', component:IconsComponent }
-  ]}
-]},
-{ path: 'notes', component:DisplayNotesComponent }
+    { path: 'notes', component:GetAllNotesComponent}
+    ]
+  },
+{ path:'notes',component:CreateNoteComponent },
+{ path:'',redirectTo:'login',pathMatch:'full' }
 ];
 
 @NgModule({

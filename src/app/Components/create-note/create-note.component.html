@@ -1,10 +1,10 @@
-<div fxFlex="100" fxLayout="row" fxLayoutAlign="center center">
+<div fxLayout="row" fxLayoutAlign="center center">
     <mat-card class="card" fxFlex="50" fxLayout="column">
         <mat-form-field appearance="outline" class="form" *ngIf="expanded">
-            <input matInput placeholder="Title">
+            <input matInput placeholder="Title" [(ngModel)]="title">
         </mat-form-field>
         <mat-form-field fxFlex="100" appearance="outline" class="form" (click)="expand()">
-            <input matInput placeholder="Take a note...">
+            <input matInput placeholder="Take a note..." [(ngModel)]="note">
             <button mat-icon-button matSuffix>
                 <mat-icon>check_box</mat-icon>
             </button>
@@ -16,7 +16,7 @@
             </button>
         </mat-form-field>
         <div *ngIf="expanded" fxLayout="row">
-            <router-outlet></router-outlet>
+            <app-icons></app-icons>
             <button mat-button style="margin-left: auto;" (click)="close()">Close</button>
         </div>
     </mat-card>

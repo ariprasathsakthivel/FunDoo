@@ -1,4 +1,4 @@
-.container {
+.main {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -8,14 +8,36 @@
   right: 0;
 }
 
-.toolbar{
-  background-color: white;
-
-}
-.example-is-mobile .toolbar {
+.nav .toolbar {
   position: fixed;
   z-index: 2;
 }
+
+
+.sidenav-container {
+  flex: 1;
+}
+
+.nav .sidenav-container {
+  flex: 1 0 auto;
+}
+
+
+
+
+
+.toolbar{
+
+  background-color: white;
+}
+
+
+@media only screen and (max-width: 425px){
+  .toolbar{
+    width: 425px;
+  }
+}
+
 
 
 .menu{
@@ -31,9 +53,8 @@
   padding: 0px 10px;
   margin-left: auto;
   margin-right: auto;
-
+  
 }
-
 
 .refresh,.settings,.agenda{
   padding: 8px;
@@ -57,24 +78,14 @@
   }
 }
 
-// :host{
-//   ::ng-deep {
-//       .mat-form-field-appearance-outline .mat-form-field-wrapper {
-//           margin: 0px;
-//       }
-//       .mat-form-field-appearance-outline .mat-form-field-outline-start, .mat-form-field-appearance-outline .mat-form-field-outline-end {
-//           border: 0px;
-//           min-width: 0px;
-//       }
-//       .mat-form-field-wrapper {
-//           padding-bottom: 0px;
-//       }
-//     }
-//   }
 
 
-.example-sidenav-container {
-  flex: 1;
+
+@media only screen and (max-width: 425px){
+  .sidenav-container{
+    width: 425px;
+    flex: 1;
+  }
 }
 
 .sidenav{
@@ -84,8 +95,6 @@
 .sidenavlist{
   margin: 5px 5px;
 }
-.example-is-mobile .example-sidenav-container {
-  flex: 1 0 auto;
-}
+
 
  

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +28,8 @@ import { CreateNoteComponent } from './Components/create-note/create-note.compon
 import { IconsComponent } from './Components/icons/icons.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { DisplayNotesComponent } from './Components/display-notes/display-notes.component';
+import { GetAllNotesComponent } from './Components/get-all-notes/get-all-notes.component';
+import { AuthGuardServiceService } from './services/AuthGuardService/auth-guard-service.service';
 
 
 
@@ -43,7 +45,8 @@ import { DisplayNotesComponent } from './Components/display-notes/display-notes.
     DashboardComponent,
     CreateNoteComponent,
     IconsComponent,
-    DisplayNotesComponent
+    DisplayNotesComponent,
+    GetAllNotesComponent
   ],
   imports: [
     BrowserModule,
@@ -63,9 +66,10 @@ import { DisplayNotesComponent } from './Components/display-notes/display-notes.
     MatListModule,
     MatMenuModule,
     ReactiveFormsModule,
+    FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthGuardServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

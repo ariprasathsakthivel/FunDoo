@@ -51,4 +51,7 @@ export class UserServiceService {
     }
     return this.httpService.postService(this.baseURL+"/user/reset-password",payload,true,header)
   }
+
+
+  
 }
