@@ -1,6 +1,6 @@
 <div fxLayout="row" fxLayoutAlign="center center">
     <mat-card class="card" fxFlex="50" fxLayout="column">
-        <mat-form-field appearance="outline" class="form" *ngIf="expanded">
+        <mat-form-field  appearance="outline" class="form" *ngIf="expanded">
             <input matInput placeholder="Title" [(ngModel)]="title">
         </mat-form-field>
         <mat-form-field fxFlex="100" appearance="outline" class="form" (click)="expand()">

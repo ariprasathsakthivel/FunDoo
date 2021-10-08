@@ -1,0 +1,17 @@
+<mat-dialog-content fxLayout="column" class="mat-typography">
+    <mat-form-field  appearance="outline">
+        <input matInput [value]="title" [(ngModel)]="title">
+        <br>
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+
+        <input matInput [value]="description" [(ngModel)]="description">
+    </mat-form-field>
+    <mat-dialog-actions align="end">
+        <app-icons></app-icons> 
+        <button mat-button style="margin-left: auto;" mat-dialog-close (click)="close()">Close</button>
+    </mat-dialog-actions>
+
+</mat-dialog-content>
+    

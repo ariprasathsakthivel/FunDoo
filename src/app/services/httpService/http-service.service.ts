@@ -13,4 +13,10 @@ export class HttpServiceService {
   {
     return this.http.post(url,payload,token && header);
   }
+
+  getService(url:string,token:boolean=false,header:any=null)
+  {
+    return this.http.get(url,token && header);
+  }
+
 }

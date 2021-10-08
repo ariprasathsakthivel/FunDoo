@@ -30,6 +30,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import { DisplayNotesComponent } from './Components/display-notes/display-notes.component';
 import { GetAllNotesComponent } from './Components/get-all-notes/get-all-notes.component';
 import { AuthGuardServiceService } from './services/AuthGuardService/auth-guard-service.service';
+import {MatDialogModule} from '@angular/material/dialog';
+import { UpdateNotesComponent } from './Components/update-notes/update-notes/update-notes.component';
 
 
 
@@ -46,7 +48,8 @@ import { AuthGuardServiceService } from './services/AuthGuardService/auth-guard-
     CreateNoteComponent,
     IconsComponent,
     DisplayNotesComponent,
-    GetAllNotesComponent
+    GetAllNotesComponent,
+    UpdateNotesComponent
   ],
   imports: [
     BrowserModule,
@@ -67,6 +70,7 @@ import { AuthGuardServiceService } from './services/AuthGuardService/auth-guard-
     MatMenuModule,
     ReactiveFormsModule,
     FormsModule,
+    MatDialogModule,
     HttpClientModule
   ],
   providers: [AuthGuardServiceService],

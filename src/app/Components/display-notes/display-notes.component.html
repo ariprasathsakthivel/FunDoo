@@ -1,69 +1,12 @@
-<div class="container" fxLayout="row wrap" fxFlexOffset="80px" fxFlexOffset.xs="5%">
-    <mat-card class="card">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam voluptates dolor ratione suscipit dicta assumenda laudantium maiores molestias repellendus eum, mollitia expedita quibusdam dolorum fugiat itaque impedit pariatur similique dolore! 
-        <div fxLayout="row">
-            <app-icons></app-icons>
-        </div>
+<div class="container" fxLayout="row wrap" fxFlexOffset="80px" fxFlexOffset.xs="5%" >
+    <mat-card class="card" *ngFor="let element of notes" >
+        <mat-card-content style="height: fit-content;" (click)="openDialog(element)">
+            <div style="font-size:large;">{{element.title}}</div>
+            <div>{{element.description}}</div>
+        </mat-card-content>
+        <mat-card-actions>
+            <app-icons [note]="element"></app-icons> 
+        </mat-card-actions>
     </mat-card>
-    <mat-card class="card">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam voluptates dolor ratione suscipit dicta assumenda laudantium maiores molestias repellendus eum, mollitia expedita quibusdam dolorum fugiat itaque impedit pariatur similique dolore! 
-        <div fxLayout="row">
-            <app-icons></app-icons>
-        </div>
-    </mat-card>
-    <mat-card class="card">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam voluptates dolor ratione suscipit dicta assumenda laudantium maiores molestias repellendus eum, mollitia expedita quibusdam dolorum fugiat itaque impedit pariatur similique dolore! 
-        <div fxLayout="row">
-            <app-icons></app-icons>
-        </div>
-    </mat-card>
-    <mat-card class="card">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam voluptates dolor ratione suscipit dicta assumenda laudantium maiores molestias repellendus eum, mollitia expedita quibusdam dolorum fugiat itaque impedit pariatur similique dolore!
-        <div fxLayout="row">
-            <app-icons></app-icons>
-        </div> 
-    </mat-card>
-    <mat-card class="card">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam voluptates dolor ratione suscipit dicta assumenda laudantium maiores molestias repellendus eum, mollitia expedita quibusdam dolorum fugiat itaque impedit pariatur similique dolore!
-        <div fxLayout="row">
-            <app-icons></app-icons>
-        </div> 
-    </mat-card>
-    <mat-card class="card">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam voluptates dolor ratione suscipit dicta assumenda laudantium maiores molestias repellendus eum, mollitia expedita quibusdam dolorum fugiat itaque impedit pariatur similique dolore!
-        <div fxLayout="row">
-            <app-icons></app-icons>
-        </div> 
-    </mat-card>
-    <mat-card class="card">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam voluptates dolor ratione suscipit dicta assumenda laudantium maiores molestias repellendus eum, mollitia expedita quibusdam dolorum fugiat itaque impedit pariatur similique dolore! 
-        <div fxLayout="row">
-            <app-icons></app-icons>
-        </div>
-    </mat-card>
-    <mat-card class="card">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam voluptates dolor ratione suscipit dicta assumenda laudantium maiores molestias repellendus eum, mollitia expedita quibusdam dolorum fugiat itaque impedit pariatur similique dolore! 
-        <div fxLayout="row">
-            <app-icons></app-icons>
-        </div>
-    </mat-card>
-    <mat-card class="card">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam voluptates dolor ratione suscipit dicta assumenda laudantium maiores molestias repellendus eum, mollitia expedita quibusdam dolorum fugiat itaque impedit pariatur similique dolore! 
-        <div fxLayout="row">
-            <app-icons></app-icons>
-        </div>
-    </mat-card>
-    <mat-card class="card">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam voluptates dolor ratione suscipit dicta assumenda laudantium maiores molestias repellendus eum, mollitia expedita quibusdam dolorum fugiat itaque impedit pariatur similique dolore! 
-        <div fxLayout="row">
-            <app-icons></app-icons>
-        </div>
-    </mat-card>
-    <mat-card class="card">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam voluptates dolor ratione suscipit dicta assumenda laudantium maiores molestias repellendus eum, mollitia expedita quibusdam dolorum fugiat itaque impedit pariatur similique dolore! 
-        <div fxLayout="row">
-            <app-icons></app-icons>
-        </div>
-    </mat-card>
-
 </div>
+

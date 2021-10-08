@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, EventEmitter,Output} from '@angular/core';
 
 @Component({
   selector: 'app-create-note',
@@ -9,11 +9,14 @@ export class CreateNoteComponent implements OnInit {
 expanded:boolean=false;
 title:any;
 note:any;
-  constructor() { }
+data:any;
+  constructor() {}
 
   ngOnInit(): void {
   }
 
+  @Output() dataEvent=new EventEmitter<string[]>()
+ 
   expand(){
     if (!this.expanded){
       this.expanded=!this.expanded;
@@ -24,7 +27,10 @@ note:any;
   close(){
     if (this.expanded){
       this.expanded=!this.expanded;
-      console.log(this.title,this.note);
+      this.data={"title":this.title,"description":this.note};
+      this.dataEvent.emit(this.data);
+      this.title="";
+      this.note="";
     }
   }
 }

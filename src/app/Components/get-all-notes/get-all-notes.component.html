@@ -1,8 +1,8 @@
 
 <div style="margin-top: 50px;" >
-    <app-create-note></app-create-note>
+    <app-create-note (dataEvent)="createNoteData($event)"></app-create-note>
 </div>
 
 <div>
-    <app-display-notes></app-display-notes>
+    <app-display-notes [notes]="notesToDisplay" ></app-display-notes>
 </div>

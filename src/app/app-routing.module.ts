@@ -22,7 +22,6 @@ const routes: Routes = [
     { path: 'notes', component:GetAllNotesComponent}
     ]
   },
-{ path:'notes',component:CreateNoteComponent },
 { path:'',redirectTo:'login',pathMatch:'full' }
 ];
 

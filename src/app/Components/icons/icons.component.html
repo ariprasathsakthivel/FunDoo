@@ -1,13 +1,13 @@
-<button mat-icon-button >
+<button mat-icon-button  >
     <mat-icon>add_alert</mat-icon>
 </button>
-<button mat-icon-button >
+<button mat-icon-button  >
     <mat-icon>person_add_alt</mat-icon>
 </button>
-<button mat-icon-button [matMenuTriggerFor]="colormenu">
+<button mat-icon-button [matMenuTriggerFor]="colormenu" >
     <mat-icon>color_lens</mat-icon>
 </button>
-<mat-menu #colormenu="matMenu">
+<mat-menu #colormenu="matMenu" >
     <button mat-menu-item class="dot" style="background-color: white; border: 1px solid rgba(0, 0, 0, 0.205);"></button>
     <button mat-menu-item class="dot" style="background-color: lightcoral;"></button>
     <button mat-menu-item class="dot" style="background-color: orange;"></button>
@@ -18,7 +18,7 @@
     <button mat-menu-item class="dot" style="background-color: darkcyan;"></button>
     <button mat-menu-item class="dot" style="background-color: purple;"></button>
 </mat-menu>
-<button mat-icon-button >
+<button mat-icon-button  >
     <mat-icon>image</mat-icon>
 </button>
 <button mat-icon-button >
@@ -28,6 +28,7 @@
     <mat-icon>more_vert</mat-icon>
 </button>
 <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="TrashNote()">Delete</button>
     <button mat-menu-item>Add label</button>
     <button mat-menu-item>Add drawing</button>
     <button mat-menu-item>Show checkboxes</button>
