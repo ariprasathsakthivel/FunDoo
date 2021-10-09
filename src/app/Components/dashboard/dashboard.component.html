@@ -41,26 +41,36 @@
     <mat-sidenav-container  class="sidenav-container">
         <mat-sidenav class="sidenav" #snav mode="side" fixedTopGap="120px">
             <mat-nav-list class="sidenavlist" fxLayout="column" >
+                <div matRipple [matRippleCentered]="centered" [matRippleDisabled]="disabled" [matRippleUnbounded]="unbounded" [matRippleRadius]="radius">
                     <button mat-icon-button (click)="notes()" (click)="snav.toggle()">
                         <mat-icon style="padding-right: 10px;" ><img src="../assets\lightbulb.svg" alt=""></mat-icon>
                         <mat-label style="font-size:larger;">Notes</mat-label>
                     </button>
+                </div>
+                <div matRipple [matRippleCentered]="centered" [matRippleDisabled]="disabled" [matRippleUnbounded]="unbounded" [matRippleRadius]="radius">
                     <button mat-icon-button>
                         <mat-icon style="padding-right: 10px;"><img src="../assets\notification.svg" alt=""></mat-icon>
                         <mat-label style="font-size:larger;">Reminders</mat-label>
                     </button>
+                </div>
+                <div matRipple [matRippleCentered]="centered" [matRippleDisabled]="disabled" [matRippleUnbounded]="unbounded" [matRippleRadius]="radius">
                     <button mat-icon-button>
                         <mat-icon style="padding-right: 10px;"><img src="../assets\edit.svg" alt=""></mat-icon>
                         <mat-label style="font-size:larger;">Edit Labels</mat-label>
                     </button>
+                </div>
+                <div matRipple [matRippleCentered]="centered" [matRippleDisabled]="disabled" [matRippleUnbounded]="unbounded" [matRippleRadius]="radius">
                     <button mat-icon-button (click)="archive()"  (click)="snav.toggle()">
                         <mat-icon style="padding-right: 10px;"><img src="../assets\archive.svg" alt=""></mat-icon>
                         <mat-label style="font-size:larger;">Archive</mat-label>
                     </button>
+                </div>
+                <div matRipple [matRippleCentered]="centered" [matRippleDisabled]="disabled" [matRippleUnbounded]="unbounded" [matRippleRadius]="radius">
                     <button mat-icon-button (click)="trash()"  (click)="snav.toggle()">
                         <mat-icon style="padding-right: 10px;"><img src="../assets\delete.svg" alt=""></mat-icon>
                         <mat-label style="font-size:larger;">Trash</mat-label>
                     </button>
+                </div>
             </mat-nav-list>
         </mat-sidenav>
 

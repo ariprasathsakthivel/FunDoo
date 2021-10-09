@@ -12,6 +12,10 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
 
   isExpanded = false;
+  centered = false;
+  disabled = false;
+  unbounded = false;
+  radius=0;
 
   constructor(private route:Router) { }
 

@@ -34,6 +34,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { UpdateNotesComponent } from './Components/update-notes/update-notes/update-notes.component';
 import { GetAllArchiveComponent } from './Components/get-all-archive/get-all-archive.component';
 import { GetAllTrashComponent } from './Components/get-all-trash/get-all-trash.component';
+import {MatRippleModule} from '@angular/material/core';
 
 
 
@@ -75,6 +76,7 @@ import { GetAllTrashComponent } from './Components/get-all-trash/get-all-trash.c
     ReactiveFormsModule,
     FormsModule,
     MatDialogModule,
+    MatRippleModule,
     HttpClientModule
   ],
   providers: [AuthGuardServiceService],
