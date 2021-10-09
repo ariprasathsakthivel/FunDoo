@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { NoteServiceService } from 'src/app/services/noteService/note-service.service';
 
 @Component({
@@ -9,6 +9,8 @@ import { NoteServiceService } from 'src/app/services/noteService/note-service.se
 export class IconsComponent implements OnInit {
 
   @Input() note:any;
+
+  @Output() displayRefresh=new EventEmitter();
 
   constructor(private notesService:NoteServiceService) { }
 
@@ -21,16 +23,41 @@ export class IconsComponent implements OnInit {
     
     let payload ={
       noteIdList: [this.note.id],
-      isDeleted: true
+      isDeleted: false
     }
     this.notesService.trashNotes(payload).subscribe(
-      (response)=>console.log(response),
+      (response)=>{console.log(response)},
       (error)=>console.log(error)
-      
+    )  
+  }
 
+
+
+  ArchiveNotes(){
+    console.log(this.note.title);
+
+    let payload={
+      noteIdList: [this.note.id],
+      isArchived: true
+    }
+    this.notesService.archiveNotes(payload).subscribe(
+      (response)=>{console.log(response)},
+      (error)=>console.log(error)
     )
 
     
-    
+  }
+
+  color(colorhash: any){
+    let payload={
+      color: colorhash,
+      noteIdList: [this.note.id],
+    }
+    this.notesService.changeColorNotes(payload).subscribe(
+      (response)=>{console.log("color changed");this.displayRefresh.emit()},
+      (error)=>console.log(error)
+      
+      
+    )
   }
 }

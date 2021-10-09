@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -11,11 +13,22 @@ export class DashboardComponent implements OnInit {
 
   isExpanded = false;
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit(): void {
   }
 
 
+  notes(){
+    this.route.navigateByUrl("/dashboard/notes")
+  }
+
+  archive(){
+    this.route.navigateByUrl("/dashboard/archive")
+  }
+
+  trash(){
+    this.route.navigateByUrl("/dashboard/trash")
+  }
 
 }

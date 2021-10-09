@@ -4,5 +4,5 @@
 </div>
 
 <div>
-    <app-display-notes [notes]="notesToDisplay" ></app-display-notes>
+    <app-display-notes [notesdata]="notesToDisplay" (displayEvent)="displayNotes()" ></app-display-notes>
 </div>

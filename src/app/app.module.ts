@@ -32,6 +32,8 @@ import { GetAllNotesComponent } from './Components/get-all-notes/get-all-notes.c
 import { AuthGuardServiceService } from './services/AuthGuardService/auth-guard-service.service';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UpdateNotesComponent } from './Components/update-notes/update-notes/update-notes.component';
+import { GetAllArchiveComponent } from './Components/get-all-archive/get-all-archive.component';
+import { GetAllTrashComponent } from './Components/get-all-trash/get-all-trash.component';
 
 
 
@@ -49,7 +51,9 @@ import { UpdateNotesComponent } from './Components/update-notes/update-notes/upd
     IconsComponent,
     DisplayNotesComponent,
     GetAllNotesComponent,
-    UpdateNotesComponent
+    UpdateNotesComponent,
+    GetAllArchiveComponent,
+    GetAllTrashComponent,
   ],
   imports: [
     BrowserModule,

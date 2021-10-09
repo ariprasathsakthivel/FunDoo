@@ -57,4 +57,56 @@ export class NoteServiceService {
     }
     return this.httpService.postService(this.baseURL+'/notes/trashNotes',payload,true,header)
   }
+  archiveNotes(payload:any)
+  {
+    let header={
+      headers: new HttpHeaders ({
+        "Content-Type":"application/json",
+        'Authorization': this.token
+      })
+    };
+    return this.httpService.postService(this.baseURL+'/notes/archiveNotes',payload,true,header)
+  }
+
+  deleteForEverNotes(data:any){
+
+    let httpAuthOptions = {
+      headers:new HttpHeaders({
+      'Content-Type':'application/json',
+      'Authorization': this.token
+      })
+    };
+    return this.httpService.postService(this.baseURL+'/notes/deleteForeverNotes',data,true,httpAuthOptions);
+  }
+  getArchiveNotes(){
+
+    let httpAuthOptions = {
+      headers:new HttpHeaders({
+      'Content-Type':'application/json',
+      'Authorization': this.token
+      })
+    };
+    return this.httpService.getService(this.baseURL+'/notes/getArchiveNotesList',true,httpAuthOptions);
+  }
+  getTrashNotes(){
+
+    let httpAuthOptions = {
+      headers:new HttpHeaders({
+      'Content-Type':'application/json',
+      'Authorization': this.token
+      })
+    };
+    return this.httpService.getService(this.baseURL+'/notes/getTrashNotesList',true,httpAuthOptions);
+  }
+  changeColorNotes(data:any){
+
+    let httpAuthOptions = {
+      headers:new HttpHeaders({
+      'Content-Type':'application/json',
+      'Authorization': this.token
+      })
+    };
+    return this.httpService.postService(this.baseURL+'/notes/changesColorNotes',data,true,httpAuthOptions);
+  }
+
 }

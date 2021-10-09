@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormControl, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserServiceService } from 'src/app/services/userService/user-service.service';
 
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   hidden:boolean=true;
 
   
-  constructor(private userService:UserServiceService,private snackbar:MatSnackBar) {}
+  constructor(private userService:UserServiceService,private snackbar:MatSnackBar,private route:Router) {}
 
   ngOnInit(): void {
     this.formdata=new FormGroup({
@@ -38,6 +39,7 @@ export class LoginComponent implements OnInit {
           this.snackbar.open("Login successfull","close", {
             duration: 1000,
           });
+          this.route.navigateByUrl("dashboard/notes");
         },
         (error)=>{console.log(error)
           this.snackbar.open(error.statusText ,"close", {

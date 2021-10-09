@@ -6,13 +6,13 @@
         <mat-form-field fxFlex="100" appearance="outline" class="form" (click)="expand()">
             <input matInput placeholder="Take a note..." [(ngModel)]="note">
             <button mat-icon-button matSuffix>
-                <mat-icon>check_box</mat-icon>
+                <mat-icon><img src="../assets\check_box.svg" alt=""></mat-icon>
             </button>
             <button mat-icon-button matSuffix>
-                <mat-icon>brush</mat-icon>
+                <mat-icon><img src="../assets\brush.svg" alt=""></mat-icon>
             </button>
             <button mat-icon-button matSuffix>
-                <mat-icon>image</mat-icon>
+                <mat-icon><img src="../assets\image.svg" alt=""></mat-icon>
             </button>
         </mat-form-field>
         <div *ngIf="expanded" fxLayout="row">

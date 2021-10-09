@@ -12,6 +12,7 @@ export class GetAllNotesComponent implements OnInit {
 
   notesToDisplay:any;
 
+  
   constructor(private notesService:NoteServiceService,private snackbar:MatSnackBar) { }
 
   ngOnInit(): void {
@@ -35,7 +36,8 @@ export class GetAllNotesComponent implements OnInit {
   displayNotes(){
     this.notesService.getNotes().subscribe(
       (response:any)=>{this.notesToDisplay=response.data.data;
-        this.notesToDisplay.reverse()},
+        this.notesToDisplay.reverse(), console.log("displaynotes called");
+        },
       (error)=>console.log(error)
     );
   }

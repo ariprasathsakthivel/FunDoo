@@ -7,32 +7,32 @@
         <h1>Fundoo</h1>
         <form class="matform" fxHide.lt-md="true" >
             <mat-form-field appearance="outline" >
-                <mat-icon matPrefix>search</mat-icon>
+                <mat-icon matPrefix><img src="../assets\Search.svg" alt=""></mat-icon>
                 <input matInput placeholder="Search">
                 <button mat-icon-button matSuffix>
-                    <mat-icon>close</mat-icon>
+                    <mat-icon><img src="../assets\close.svg" alt=""></mat-icon>
                 </button>
             </mat-form-field>
         </form >
 
         <div>
             <button mat-icon-button fxShow fxHide.gt-sm="true">
-                <mat-icon >search</mat-icon>
+                <mat-icon ><img src="../assets\Search.svg" alt=""></mat-icon>
             </button>
             <button mat-icon-button>
-                <mat-icon class="refresh" >refresh</mat-icon>
+                <mat-icon class="refresh" ><img src="../assets\refresh.svg" alt=""></mat-icon>
             </button>
             <button mat-icon-button>
-                <mat-icon class="agenda" >view_agenda</mat-icon>
+                <mat-icon class="agenda" ><img src="../assets\agenda.svg" alt=""></mat-icon>
             </button>
             <button mat-icon-button>
-                <mat-icon class="settings" >settings</mat-icon>
+                <mat-icon class="settings" ><img src="../assets\settings.svg" alt=""></mat-icon>
             </button>
             <button mat-icon-button>
-                <mat-icon>apps</mat-icon>
+                <mat-icon><img src="../assets\app.svg" alt=""></mat-icon>
             </button>
             <button mat-icon-button>
-                <mat-icon class="settings" >account_circle</mat-icon>
+                <mat-icon class="settings" ><img src="../assets\account_circle.svg" alt=""></mat-icon>
             </button>
         </div>
     </mat-toolbar>
@@ -41,24 +41,24 @@
     <mat-sidenav-container  class="sidenav-container">
         <mat-sidenav class="sidenav" #snav mode="side" fixedTopGap="120px">
             <mat-nav-list class="sidenavlist" fxLayout="column" >
-                    <button mat-icon-button>
-                        <mat-icon style="padding-right: 10px;" >lightbulb</mat-icon>
+                    <button mat-icon-button (click)="notes()" (click)="snav.toggle()">
+                        <mat-icon style="padding-right: 10px;" ><img src="../assets\lightbulb.svg" alt=""></mat-icon>
                         <mat-label style="font-size:larger;">Notes</mat-label>
                     </button>
                     <button mat-icon-button>
-                        <mat-icon style="padding-right: 10px;">notifications</mat-icon>
+                        <mat-icon style="padding-right: 10px;"><img src="../assets\notification.svg" alt=""></mat-icon>
                         <mat-label style="font-size:larger;">Reminders</mat-label>
                     </button>
                     <button mat-icon-button>
-                        <mat-icon style="padding-right: 10px;">edit</mat-icon>
+                        <mat-icon style="padding-right: 10px;"><img src="../assets\edit.svg" alt=""></mat-icon>
                         <mat-label style="font-size:larger;">Edit Labels</mat-label>
                     </button>
-                    <button mat-icon-button>
-                        <mat-icon style="padding-right: 10px;">archive</mat-icon>
+                    <button mat-icon-button (click)="archive()"  (click)="snav.toggle()">
+                        <mat-icon style="padding-right: 10px;"><img src="../assets\archive.svg" alt=""></mat-icon>
                         <mat-label style="font-size:larger;">Archive</mat-label>
                     </button>
-                    <button mat-icon-button>
-                        <mat-icon style="padding-right: 10px;">delete</mat-icon>
+                    <button mat-icon-button (click)="trash()"  (click)="snav.toggle()">
+                        <mat-icon style="padding-right: 10px;"><img src="../assets\delete.svg" alt=""></mat-icon>
                         <mat-label style="font-size:larger;">Trash</mat-label>
                     </button>
             </mat-nav-list>
