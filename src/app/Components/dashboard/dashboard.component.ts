@@ -24,7 +24,7 @@ export class DashboardComponent implements OnInit {
 
 
   notes(){
-    this.route.navigateByUrl("/dashboard/notes")
+    this.route.navigateByUrl("/dashboard/notes");
   }
 
   archive(){

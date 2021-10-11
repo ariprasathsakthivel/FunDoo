@@ -49,12 +49,15 @@ export class NoteServiceService {
 
   trashNotes(payload:any)
   {
+    console.log(payload);
+
     let header={
       headers: new HttpHeaders ({
         "Content-Type":"application/json",
         'Authorization': this.token
       })
     }
+    
     return this.httpService.postService(this.baseURL+'/notes/trashNotes',payload,true,header)
   }
   archiveNotes(payload:any)

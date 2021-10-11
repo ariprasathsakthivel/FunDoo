@@ -40,7 +40,7 @@ export class RegisterComponent implements OnInit {
         email: this.formdata.value.username,
         password: this.formdata.value.password,
         confirmPassword:this.formdata.value.confirm,
-        service:"xyz"
+        service:"advance"
       }
       this.userService.registerServie(payload).subscribe(
         (next)=>{console.log(next),

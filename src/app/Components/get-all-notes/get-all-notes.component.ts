@@ -11,6 +11,7 @@ import { NoteServiceService } from 'src/app/services/noteService/note-service.se
 export class GetAllNotesComponent implements OnInit {
 
   notesToDisplay:any;
+  notes: any;
 
   
   constructor(private notesService:NoteServiceService,private snackbar:MatSnackBar) { }
@@ -22,23 +23,26 @@ export class GetAllNotesComponent implements OnInit {
   createNoteData($event:any){
     let payload=$event;
     this.notesService.createNotes(payload).subscribe(
-      (response:any)=>{console.log(response),
+      (response:any)=>{console.log(response);
         this.snackbar.open(response.status.message,"close", {
           duration: 1000,
-        })
+        });
+        this.displayNotes();
       },
       (error)=>console.log(error)
     );
-    this.displayNotes();
   }
 
 
   displayNotes(){
     this.notesService.getNotes().subscribe(
-      (response:any)=>{this.notesToDisplay=response.data.data;
-        this.notesToDisplay.reverse(), console.log("displaynotes called");
+      (response:any)=>{this.notes=response.data.data;
+        this.notes.reverse();console.log(this.notes);
+        this.notesToDisplay=this.notes.filter((element:any)=>{if (!element.isDeleted && !element.isArchived){ return element}});
+         console.log("displaynotes called");
         },
       (error)=>console.log(error)
     );
   }
+
 }

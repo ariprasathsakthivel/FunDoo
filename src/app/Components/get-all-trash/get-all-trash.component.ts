@@ -9,6 +9,7 @@ import { NoteServiceService } from 'src/app/services/noteService/note-service.se
 export class GetAllTrashComponent implements OnInit {
 
   notesToDisplay: any;
+  notes: any;
 
 
   constructor(private notesService:NoteServiceService) { }
@@ -19,8 +20,11 @@ export class GetAllTrashComponent implements OnInit {
   
   displayNotes(){
     this.notesService.getTrashNotes().subscribe(
-      (response:any)=>{this.notesToDisplay=response.data.data;
-      this.notesToDisplay.reverse()},
+      (response:any)=>{this.notes=response.data.data;
+        this.notes.reverse();console.log(this.notes);
+        this.notesToDisplay=this.notes.filter((element:any)=>{if (element.isDeleted && element.isArchived){ return element}});
+         console.log("displaynotes called");
+        },
       (error)=>console.log(error)
     );
   }

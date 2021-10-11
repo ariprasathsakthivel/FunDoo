@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NoteServiceService } from 'src/app/services/noteService/note-service.service';
 
 @Component({
@@ -8,14 +9,25 @@ import { NoteServiceService } from 'src/app/services/noteService/note-service.se
 })
 export class IconsComponent implements OnInit {
 
+  isDeleted:any=false;
+  isArchived:any=false;
+  path:any;
+
   @Input() note:any;
 
   @Output() displayRefresh=new EventEmitter();
 
-  constructor(private notesService:NoteServiceService) { }
+  constructor(private notesService:NoteServiceService,private route:Router,private routes:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.pathFind()
   }
+
+
+  pathFind(){  
+      console.log(this.routes.url.subscribe((res)=>this.path=res[0].path));
+  }
+
 
 
   TrashNote(){
@@ -23,10 +35,12 @@ export class IconsComponent implements OnInit {
     
     let payload ={
       noteIdList: [this.note.id],
-      isDeleted: false
+      isDeleted: !this.isDeleted,
+      isArchived: false
+      
     }
     this.notesService.trashNotes(payload).subscribe(
-      (response)=>{console.log(response)},
+      (response)=>{console.log("trashing-->",response);this.displayRefresh.emit();},
       (error)=>console.log(error)
     )  
   }
@@ -38,10 +52,11 @@ export class IconsComponent implements OnInit {
 
     let payload={
       noteIdList: [this.note.id],
-      isArchived: true
+      isDeleted: this.isDeleted,
+      isArchived: !this.isArchived,
     }
     this.notesService.archiveNotes(payload).subscribe(
-      (response)=>{console.log(response)},
+      (response)=>{console.log(response);this.displayRefresh.emit()},
       (error)=>console.log(error)
     )
 

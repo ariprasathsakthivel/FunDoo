@@ -9,6 +9,7 @@ import { NoteServiceService } from 'src/app/services/noteService/note-service.se
 export class GetAllArchiveComponent implements OnInit {
 
   notesToDisplay: any;
+  notes: any;
 
 
   constructor(private notesService:NoteServiceService) { }
@@ -20,9 +21,10 @@ export class GetAllArchiveComponent implements OnInit {
 
   displayNotes(){
     this.notesService.getArchiveNotes().subscribe(
-      (response:any)=>{this.notesToDisplay=response.data.data;
-        this.notesToDisplay.reverse();
-       console.log("success");
+      (response:any)=>{this.notes=response.data.data;
+        this.notes.reverse();console.log(this.notes);
+        this.notesToDisplay=this.notes.filter((element:any)=>{if (element.isArchived){ return element}});
+         console.log("displaynotes called");
         },
       (error)=>console.log(error)
     );

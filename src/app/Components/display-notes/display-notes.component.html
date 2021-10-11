@@ -1,12 +1,10 @@
 <div class="container" fxLayout="row wrap" fxFlexOffset="80px" fxFlexOffset.xs="5%" >
-    <mat-card class="card" *ngFor="let element of notesdata" >
+    <mat-card class="card" *ngFor="let element of notesdata" [style.background-color]="element.color" >
         <mat-card-content style="height: fit-content;" (click)="openDialog(element)">
             <div style="font-size:large;">{{element.title}}</div>
             <div>{{element.description}}</div>
         </mat-card-content>
-        <mat-card-actions>
             <app-icons [note]="element" (displayRefresh)="displayRefresh()"></app-icons> 
-        </mat-card-actions>
     </mat-card>
 </div>
 
