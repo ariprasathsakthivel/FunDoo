@@ -1,6 +1,6 @@
 <div *ngIf="path=='trash'">
     <button mat-icon-button  >
-        <mat-icon><img src="../assets\deleteforever.svg" alt=""></mat-icon>
+        <mat-icon><img src="../assets\deleteforever.svg" alt="" (click)="EmptyTrash()"></mat-icon>
     </button>
     <button mat-icon-button  >
         <mat-icon><img src="../assets\restore.svg" alt=""></mat-icon>
@@ -10,7 +10,7 @@
     <button mat-icon-button  >
         <mat-icon><img src="../assets\add alert.svg" alt=""></mat-icon>
     </button>
-    <button mat-icon-button  >
+    <button mat-icon-button  (click)="addColoborator()">
         <mat-icon><img src="../assets\person.svg" alt=""></mat-icon>
     </button>
     <button mat-icon-button [matMenuTriggerFor]="colormenu" >

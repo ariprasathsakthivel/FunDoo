@@ -1,0 +1,44 @@
+<h2 mat-dialog-title>Collaborators</h2>
+<mat-divider></mat-divider>
+
+<mat-dialog-content class="content" class="mat-typography">
+    <div fxLayout="row" fxLayoutAlign="start start">
+        <mat-icon style="padding: 5px 20px 5px 0px;"><img src="../assets\account_circle_big.svg"></mat-icon>
+        <div fxLayout="column">
+        <p style="padding: 10px 30px 0px ; margin-bottom: 0px;">{{data.element.user.firstName}} {{data.element.user.lastName}} ({{data.element.user.service}})</p>
+        <p style="padding-left: 30px ;">{{data.element.user.username}}</p>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start start" *ngFor="let collaborator of data.element.collaborators">
+        <mat-icon style="padding: 5px 20px 5px 0px;"><img src="../assets\account_circle_big.svg"></mat-icon>
+        <div fxLayout="column">
+        <p style="padding: 10px 30px 0px ; margin-bottom: 0px;">{{data.element.user.firstName}} {{data.element.user.lastName}} ({{data.element.user.service}})</p>
+        <p style="padding-left: 30px ;">{{data.element.user.username}}</p>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start start" >
+        <mat-icon style="padding: 5px 20px 5px 0px;"><img src="../assets\personaddbig.svg"></mat-icon>
+        <mat-form-field  appearance="outline" style="padding: 0px 30px; width: 100%;">
+            <input matInput [matMenuTriggerFor]="menu" [(ngModel)]="search" (input)="Users()">
+            <button mat-icon-button matSuffix>
+                <mat-icon ><img src="../assets\check.svg" alt=""></mat-icon>
+            </button>
+            <mat-menu  #menu="matMenu"  yPosition="below">
+                <div *ngFor="let user of usersList">
+                    <button mat-menu-item>{{user.email}}</button>
+                </div>
+            </mat-menu>
+        </mat-form-field>
+    </div>
+    
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button style="margin-left: auto;" (click)="ToUpdate()" mat-dialog-close>Cancel</button>
+    <button mat-button (click)="ToUpdate()" mat-dialog-close>save</button>
+</mat-dialog-actions>
+
+
+
+

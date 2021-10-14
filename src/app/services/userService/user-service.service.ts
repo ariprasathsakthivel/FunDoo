@@ -52,6 +52,16 @@ export class UserServiceService {
     return this.httpService.postService(this.baseURL+"/user/reset-password",payload,true,header)
   }
 
+  searchUser(payload:any){
+
+    let httpAuthOptions = {
+      headers:new HttpHeaders({
+      'Content-Type':'application/json',
+      'Authorization': this.token
+      })
+    };
+    return this.httpService.postService(this.baseURL +'/user/searchUserList',payload,true,httpAuthOptions);
+  }
 
   
 }

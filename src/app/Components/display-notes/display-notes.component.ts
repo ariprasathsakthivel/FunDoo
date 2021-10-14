@@ -34,7 +34,7 @@ export class DisplayNotesComponent implements OnInit {
         element:element
       }
     });
-    console.log(element);
+    console.log("display",element);
     
 
     dialogRef.afterClosed().subscribe(() => {
@@ -44,6 +44,8 @@ export class DisplayNotesComponent implements OnInit {
   }
 
   displayRefresh(){
+    console.log("display refresh called");
+    
     this.displayEvent.emit()
   }
 

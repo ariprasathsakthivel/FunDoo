@@ -1,6 +1,8 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NoteServiceService } from 'src/app/services/noteService/note-service.service';
+import { AddCollaboratorComponent } from '../add-collaborator/add-collaborator.component';
 
 @Component({
   selector: 'app-icons',
@@ -17,7 +19,7 @@ export class IconsComponent implements OnInit {
 
   @Output() displayRefresh=new EventEmitter();
 
-  constructor(private notesService:NoteServiceService,private route:Router,private routes:ActivatedRoute) { }
+  constructor(private notesService:NoteServiceService,private route:Router,private routes:ActivatedRoute,public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.pathFind()
@@ -35,8 +37,7 @@ export class IconsComponent implements OnInit {
     
     let payload ={
       noteIdList: [this.note.id],
-      isDeleted: !this.isDeleted,
-      isArchived: false
+      isDeleted: !this.isDeleted
       
     }
     this.notesService.trashNotes(payload).subscribe(
@@ -52,8 +53,7 @@ export class IconsComponent implements OnInit {
 
     let payload={
       noteIdList: [this.note.id],
-      isDeleted: this.isDeleted,
-      isArchived: !this.isArchived,
+      isDeleted: this.isDeleted
     }
     this.notesService.archiveNotes(payload).subscribe(
       (response)=>{console.log(response);this.displayRefresh.emit()},
@@ -74,5 +74,33 @@ export class IconsComponent implements OnInit {
       
       
     )
+  }
+
+  addColoborator(){
+    const dialogRef = this.dialog.open(AddCollaboratorComponent,{
+      width: '100%',
+      data: {
+        element:this.note
+      }
+    });
+    console.log(this.note);
+    
+
+    dialogRef.afterClosed().subscribe(() => {
+      console.log('collaborator closed');
+    });
+  }
+
+  EmptyTrash(){
+    let payload={
+      noteIdList: [this.note.id],
+      isDeleted: false,
+    }
+  this.notesService.deleteForEverNotes(payload).subscribe(
+    (response)=>{console.log(response);this.displayRefresh.emit()},
+    (error)=>console.log(error)
+    
+    
+  )
   }
 }

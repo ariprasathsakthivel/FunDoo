@@ -10,3 +10,10 @@
 }
 
 
+.icon{
+    visibility: hidden;
+}
+
+.card:hover .icon{
+    visibility: visible;
+}

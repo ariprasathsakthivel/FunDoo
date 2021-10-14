@@ -23,7 +23,7 @@ export class GetAllArchiveComponent implements OnInit {
     this.notesService.getArchiveNotes().subscribe(
       (response:any)=>{this.notes=response.data.data;
         this.notes.reverse();console.log(this.notes);
-        this.notesToDisplay=this.notes.filter((element:any)=>{if (element.isArchived){ return element}});
+        this.notesToDisplay=this.notes.filter((element:any)=>{if (element.isArchived){if (!element.isDeleted){ return element}}});
          console.log("displaynotes called");
         },
       (error)=>console.log(error)

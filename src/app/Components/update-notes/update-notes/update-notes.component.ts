@@ -19,6 +19,8 @@ export class UpdateNotesComponent implements OnInit {
   ngOnInit(): void {
     this.title=this.data.element.title;
     this.description=this.data.element.description;
+    console.log(this.title);
+    
    }
   
 

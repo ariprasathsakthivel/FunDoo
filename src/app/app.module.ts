@@ -35,6 +35,7 @@ import { UpdateNotesComponent } from './Components/update-notes/update-notes/upd
 import { GetAllArchiveComponent } from './Components/get-all-archive/get-all-archive.component';
 import { GetAllTrashComponent } from './Components/get-all-trash/get-all-trash.component';
 import {MatRippleModule} from '@angular/material/core';
+import { AddCollaboratorComponent } from './Components/add-collaborator/add-collaborator.component';
 
 
 
@@ -55,6 +56,7 @@ import {MatRippleModule} from '@angular/material/core';
     UpdateNotesComponent,
     GetAllArchiveComponent,
     GetAllTrashComponent,
+    AddCollaboratorComponent,
   ],
   imports: [
     BrowserModule,

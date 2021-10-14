@@ -4,7 +4,10 @@
             <div style="font-size:large;">{{element.title}}</div>
             <div>{{element.description}}</div>
         </mat-card-content>
+        <mat-card-content class="icon">
             <app-icons [note]="element" (displayRefresh)="displayRefresh()"></app-icons> 
+        </mat-card-content>
     </mat-card>
 </div>
+
 
